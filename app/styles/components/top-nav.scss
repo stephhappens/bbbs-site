@@ -13,7 +13,8 @@
   // flex-grow: 1;
   justify-content: space-between;
   align-items: center;
-  background: $c-white;
+  background: $c-darkgrey;
+  color: $c-background;
   opacity: 0.8;
   z-index: 2;
 
@@ -37,14 +38,7 @@
   }
   }
 }
-//
-//
-// .hero {
-//   display: flex;
-//   flex-grow: 1;
-//
-// &__image {
-//   filter: blur(.7px) grayscale(70%);
-//   object-fit: cover;
-// }
-// }
+
+.top-nav__logo {
+  height: 4rem;
+}
