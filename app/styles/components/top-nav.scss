@@ -1,0 +1,50 @@
+.hero {
+  background: url('http://www.mentorakid.org/atf/cf/%7B409bbba9-6fe0-48c1-9c2d-fdb43180f5b1%7D/slider-5.png') no-repeat center;
+  background-size: cover;
+  height: 20rem;
+  filter: blur(.7px) grayscale(70%);
+
+}
+
+.top-nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  // flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  background: $c-white;
+  opacity: 0.8;
+  z-index: 2;
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-right: .5rem;
+
+  a {
+    display: inline-block;
+    // padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+  }
+}
+//
+//
+// .hero {
+//   display: flex;
+//   flex-grow: 1;
+//
+// &__image {
+//   filter: blur(.7px) grayscale(70%);
+//   object-fit: cover;
+// }
+// }
