@@ -1,25 +1,65 @@
 .form {
+  margin: 12rem 1rem;
   background: $c-white;
-  border: 0.1rem solid $c-primary;
+  border: 0.1rem solid $c-darkgrey;
   border-radius: 0.4rem;
+  box-shadow: $box-shadow;
 
   &__logo {
     display: flex;
     justify-content: center;
     height: 100%;
     width: 30%;
-    margin: auto;
+    margin: 0.5rem auto;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0.5rem 1rem;
   }
 
   &__info-group {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
+  }
+
+  &__label {
+    font-size: 0.8rem;
+  }
+
+  &__input {
+    padding: 0.2rem;
+    &:focus {
+      outline: 0.1rem solid $c-primary;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    padding: 0.2rem;
+    border: 0;
+    background: $c-primary;
+    color: $c-white;
+    font-size: 1rem;
+    outline: 0;
+    cursor: pointer;
+
+    &--accent {
+      background: $c-accent;
+      border-bottom-right-radius: 0.4rem;
+      border-bottom-left-radius: 0.4rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
+    }
   }
 }
