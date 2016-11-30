@@ -5,6 +5,12 @@
   border-radius: 0.4rem;
   box-shadow: $box-shadow;
 
+  &__header {
+    text-align: center;
+    margin-top: .5rem;
+    color: $c-darkgrey;
+  }
+
   &__logo {
     display: flex;
     justify-content: center;

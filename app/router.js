@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('admin', function() {
     this.route('login');
-    this.route('homepage');
+    this.route('homepage', function() {
+      this.route('announcements');
+    });
   });
 });
 
