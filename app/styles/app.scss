@@ -1,3 +1,10 @@
-body {
-  margin: 0;
-}
+$c-background: #f1f1f1;
+$c-primary: #753f95;
+$c-accent: #1dafec;
+$c-white: #fff;
+$c-darkgrey: #444444;
+$box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+
+@import 'reset';
+@import 'layout';
+@import 'components/form';

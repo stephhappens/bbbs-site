@@ -1,0 +1,33 @@
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  // position: relative;
+
+  &--vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -1rem;
+
+  &__item {
+    flex-grow: 1;
+    margin: 1rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
