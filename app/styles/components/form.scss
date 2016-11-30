@@ -1,0 +1,25 @@
+.form {
+  background: $c-white;
+  border: 0.1rem solid $c-primary;
+  border-radius: 0.4rem;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 30%;
+    margin: auto;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  &__info-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+}
