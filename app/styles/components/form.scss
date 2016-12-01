@@ -38,15 +38,10 @@
     flex-direction: column;
     margin: 0.3rem 0;
 
-    &--center {
-      justify-content: center;
+    &--flex {
+      flex-direction: row;
       align-items: center;
     }
-  }
-
-  &__img {
-    border-radius: 50%;
-    height: 10rem;
   }
 
   &__label {
@@ -55,6 +50,15 @@
 
   &__input {
     padding: 0.2rem;
+
+    // &-flex {
+    //  display: flex;
+    //  flex-direction: row;
+    //  flex-grow: 1;
+    //  flex-wrap: wrap;
+    //  flex-basis: calc(100% / 2);
+    //  width: 50%;
+
     &:focus {
       outline: 0.1rem solid $c-primary;
     }
@@ -63,6 +67,7 @@
       width: 50%;
     }
   }
+
 
   &__buttons {
     display: flex;
@@ -97,3 +102,7 @@
     }
   }
 }
+
+  .input-flex {
+    display: flex;
+  }
