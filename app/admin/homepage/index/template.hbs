@@ -1,7 +1,7 @@
 <div class="container">
   <div class="grid">
     <div class="grid-item grid-item-admin"><a href="#">Users </a></div>
-    <div class="grid-item grid-item-admin"><a href="#">Events</a></div>
+    {{#link-to "admin.homepage.event" class="grid-item grid-item-admin" }}Events {{/link-to}}
     {{#link-to "admin.homepage.announcements" class="grid-item grid-item-admin"}}Announcements{{/link-to}}
   </div>
 
