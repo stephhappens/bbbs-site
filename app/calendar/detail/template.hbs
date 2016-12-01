@@ -1,0 +1,21 @@
+<div class="modal modal--show">
+  {{#simple-form class="modal__card" onsubmit=(action "saveForm") as |formValues|}}
+    <div class="modal__content">
+      {{#link-to "calendar" class="modal__exit"}}<i class="fa fa-times" aria-hidden="true"></i>{{/link-to}}
+      <p class="modal__header">How many tickets would you like to claim?</p>
+      <select class="modal__options" id="">
+        <option value="formValues.ticket" selected>1</option>
+        <option value="formValues.ticket">2</option>
+        <option value="formValues.ticket">3</option>
+        <option value="formValues.ticket">4</option>
+        <option value="formValues.ticket">5</option>
+        <option value="formValues.ticket">6</option>
+        <option value="formValues.ticket">7</option>
+        <option value="formValues.ticket">8</option>
+        <option value="formValues.ticket">9</option>
+        <option value="formValues.ticket">10</option>
+      </select>
+    </div>
+    <button class="modal__btn" type="submit">Submit</button>
+  {{/simple-form}}
+</div>
