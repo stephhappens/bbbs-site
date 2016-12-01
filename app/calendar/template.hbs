@@ -33,7 +33,7 @@
           to make you feel better?</p>
         <div class="calendar__tickets">
           <div class="calendar__available">Available Tickets: 12</div>
-          <button class="calendar__claim">Claim Ticket</button>
+          {{#link-to "calendar.detail" class="calendar__claim"}}Claim Ticket{{/link-to}}
         </div>
       </div>
     </div>
@@ -57,25 +57,5 @@
     </div>
   </div>
 
-  <div class="modal">
-    <div class="modal__card">
-      <div class="modal__content">
-        <button class="modal__exit"><i class="fa fa-times" aria-hidden="true"></i></button>
-        <p class="modal__header">How many tickets would you like to claim?</p>
-        <select class="modal__options" id="">
-          <option value="1" selected>1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-      <button class="modal__btn" type="submit">Submit</button>
-    </div>
-  </div>
+  {{ outlet }}
 </div>
