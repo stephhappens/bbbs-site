@@ -19,6 +19,19 @@
     margin: 0.5rem auto;
   }
 
+  &__frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    margin: 1rem;
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 10rem;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -50,14 +63,6 @@
 
   &__input {
     padding: 0.2rem;
-
-    // &-flex {
-    //  display: flex;
-    //  flex-direction: row;
-    //  flex-grow: 1;
-    //  flex-wrap: wrap;
-    //  flex-basis: calc(100% / 2);
-    //  width: 50%;
 
     &:focus {
       outline: 0.1rem solid $c-primary;

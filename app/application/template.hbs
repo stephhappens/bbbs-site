@@ -6,11 +6,11 @@
         <img src="/images/bbbs.png" class="top-nav__logo" alt=""></div>
       </div>
 
-      <ul class="top-nav__group">
-        <li class="top-nav__item"> <a href="#">Login </a></li>
-        <li class="top-nav__item"><a href="#">Calendar</a></li>
-        <li class="top-nav__item"><a href="#">Messages</a></li>
-      </ul>
+      <div class="top-nav__group">
+        {{#link-to "index" class="top-nav__item" }} Login {{/link-to}}
+        {{#link-to "index" class="top-nav__item"}} Calendar {{/link-to}}
+        {{#link-to "index" class="top-nav__item" }} Messages {{/link-to}}
+      </div>
       </div>
       <div class="hero">
       </div>
