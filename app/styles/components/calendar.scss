@@ -1,0 +1,93 @@
+.calendar {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__btn {
+    align-self: flex-end;
+    padding: 0.3rem 0.5rem;
+    border: 0;
+    background: $c-primary;
+    color: $c-white;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &__group {
+    margin: 1rem 0;
+    display: flex;
+  }
+
+  &__sidebar-date {
+    margin-top: 0;
+    padding: 1rem;
+    background: $c-white;
+    border: 0.1rem solid $c-darkgrey;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__main {
+    flex-grow: 1;
+    margin-left: 1rem;
+  }
+
+  &__event {
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__date {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  &__location {
+    margin: 0;
+    font-size: 0.9rem;
+
+  }
+
+  &__time {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  &__tickets {
+    display: flex;
+  }
+
+  &__available {
+    padding: 0.3rem 0.5rem;
+    background: $c-primary;
+    color: $c-white;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
+  }
+
+  &__claim {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border: 0;
+    background: $c-accent;
+    color: $c-white;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
+    outline: 0;
+    cursor: pointer;
+
+    &:active {
+      box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 30px #193047;
+    }
+  }
+}
+
+
+.fa-angle-down {
+  padding-left: 0.2rem;
+}
