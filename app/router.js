@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('homepage', function() {
       this.route('announcements');
       this.route('event');
+      this.route('user');
     });
   });
   this.route('register');
