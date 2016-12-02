@@ -1,22 +1,26 @@
 .hero {
   background: url('http://www.mentorakid.org/atf/cf/%7B409bbba9-6fe0-48c1-9c2d-fdb43180f5b1%7D/slider-5.png') no-repeat center;
   background-size: cover;
-  height: 20rem;
+  height: 30rem;
   filter: blur(.7px) grayscale(70%);
 
 }
 
 .top-nav {
   position: fixed;
-  width: 100%;
   display: flex;
-  // flex-grow: 1;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0 1rem;
   background: $c-darkgrey;
   color: $c-background;
-  opacity: 0.8;
+  // opacity: 0.95;
   z-index: 2;
+
+  &__logo {
+    height: 4rem;
+  }
 
   &__group {
     display: flex;
@@ -32,9 +36,4 @@
       color: $c-primary;
     }
   }
-
-}
-
-.top-nav__logo {
-  height: 4rem;
 }
