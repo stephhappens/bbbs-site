@@ -51,6 +51,11 @@
     flex-direction: column;
     margin: 0.3rem 0;
 
+    &--center {
+      justify-content: center;
+      align-items: center;
+    }
+
     &--flex {
       flex-direction: row;
       align-items: center;

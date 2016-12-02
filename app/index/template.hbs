@@ -1,19 +1,19 @@
 <div class="container container--vertical">
-  <div class="form">
+  {{#simple-form class="form" onsubmit=(action "login") as |formValues|}}
     <img src="../images/bbbs.png" class="form__logo" alt="BB/BS Logo">
     <div class="form__info">
       <div class="form__info-group">
         <label class="form__label" for="email">Email</label>
-        <input class="form__input" type="text" id="email" required=true>
+        {{input class="form__input" type="text" id="email" required=true value=formValues.email}}
       </div>
       <div class="form__info-group">
         <label class="form__label" for="password">Password</label>
-        <input class="form__input" type="text" id="password" required=true>
+        {{input class="form__input" type="password" id="password" required=true value=formValues.password}}
       </div>
     </div>
     <div class="form__buttons">
       <button class="form__btn">Submit</button>
       {{#link-to "register" class="form__btn form__btn--accent"}}First Time Here?{{/link-to}}
     </div>
-  </div>
+  {{/simple-form}}
 </div>
