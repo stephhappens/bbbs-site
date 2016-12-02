@@ -1,19 +1,28 @@
 .profile {
-  background: pink;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: .1rem solid $c-darkgrey;
+  margin-top: 2rem;
+
 &--flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
 }
 
 &__content {
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+margin-left: 1rem;
+
+  &-names {
+    font-size: 2rem;
+  }
+  &-input {
+    font-size: 1.2rem;
+  }
 }
 }
