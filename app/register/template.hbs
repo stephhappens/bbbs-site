@@ -1,42 +1,46 @@
 <div class="container">
-  <div class="form">
+  {{#simple-form class="form" onsubmit=(action "saveUser") as |formValues|}}
     <img src="../images/bbbs.png" class="form__logo" alt="BB/BS Logo">
     <div class="form__info form__info--row">
       <div class="form__info-group form__info-group--center">
         <div class="form__frame">
           <img src="http://placekitten.com/300/300" class="form__img">
         </div>
-        <input class="form__input form__input--half" type="file">
+        {{input class="form__input form__input--half" type="file"}}
       </div>
       <div class="form__right">
         <div class="form__info-group">
           <label class="form__label" for="firstName">First Name</label>
-          <input class="form__input" type="text" id="firstName" required=true>
+          {{input class="form__input" type="text" id="firstName" required=true value=formValues.firstName}}
         </div>
         <div class="form__info-group">
           <label class="form__label" for="lastName">Last Name</label>
-          <input class="form__input" type="text" id="lastName" required=true>
+          {{input class="form__input" type="text" id="lastName" required=true value=formValues.lastName}}
         </div>
         <div class="form__info-group">
           <label class="form__label" for="Email">Email</label>
-          <input class="form__input" type="text" id="Email" required=true>
+          {{input class="form__input" type="text" id="Email" required=true value=formValues.email}}
+        </div>
+        <div class="form__info-group">
+          <label class="form__label" for="Password">Password</label>
+          {{input class="form__input" type="password" id="Password" required=true value=formValues.password}}
         </div>
         <div class="form__info-group">
           <label class="form__label" for="employer">Employer or School</label>
-          <input class="form__input" type="text" id="employer" required=true>
+          {{input class="form__input" type="text" id="employer" required=true value=formValues.employer}}
         </div>
         <div class="form__info-group">
           <label class="form__label" for="phone">Phone</label>
-          <input class="form__input" type="text" id="phone" required=true>
+          {{input class="form__input" type="text" id="phone" required=true value=formValues.phone}}
         </div>
         <div class="form__info-group">
           <label class="form__label" for="little">Little's Name</label>
-          <input class="form__input" type="text" id="little" required=true>
+          {{input class="form__input" type="text" id="little" required=true value=formValues.little}}
         </div>
       </div>
     </div>
       <div class="form__buttons">
         <button class="form__btn">Save</button>
       </div>
-  </div>
+  {{/simple-form}}
 </div>
