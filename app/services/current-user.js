@@ -9,7 +9,7 @@ export default Ember.Service.extend({
 
   loadCurrentUser() {
     // Only load the current user if the session is logged in
-    if (this.get('session').isAuthenticated) {
+    if (this.get('session.isAuthenticated')) {
       // Return current promise for loading current user
       this.get('store').queryRecord('user', {
         current: true,
