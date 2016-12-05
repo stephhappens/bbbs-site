@@ -7,8 +7,12 @@
       </div>
 
       <div class="top-nav__group">
-        {{#link-to "index" class="top-nav__item" }} Login {{/link-to}}
-        {{#link-to "index" class="top-nav__item"}} Calendar {{/link-to}}
+        {{#if currentUser}}
+          {{#link-to "index" class="top-nav__item"}} Logout {{/link-to}}
+        {{else}}
+          {{#link-to "index" class="top-nav__item" }} Login {{/link-to}}
+        {{/if}}
+        {{#link-to "calendar" class="top-nav__item"}} Calendar {{/link-to}}
         {{#link-to "index" class="top-nav__item" }} Messages {{/link-to}}
       </div>
       </div>
