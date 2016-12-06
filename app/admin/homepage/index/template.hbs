@@ -1,9 +1,25 @@
-<div class="container">
-  <div class="grid">
-    {{#link-to "admin.homepage.event" class="grid-item grid-item-admin" }} Users {{/link-to}}
-    {{#link-to "admin.homepage.event" class="grid-item grid-item-admin" }}Events {{/link-to}}
-    {{#link-to "admin.homepage.announcements" class="grid-item grid-item-admin"}}Announcements{{/link-to}}
-  </div>
 
-  {{outlet}}
-</div>
+  <div class="container">
+    <div class="calendar">
+      <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+      <div class="calendar__group">
+        <div class="calendar__sidebar">
+          <p class="calendar__sidebar-date">Dec 1</p>
+        </div>
+        <div class="calendar__main">
+          <p class="calendar__event">The Iron Yard - Kids Code Night</p>
+          <p class="calendar__date">Thursday, December 1, 2016</p>
+          <p class="calendar__location">613 Ewing Avenue Nashville, TN 37203</p>
+          <p class="calendar__time">4:30pm - 6:30pm</p>
+          <p class="calendar__description">Aw, you're all Mr. Grumpy Face today. Aw, you're all Mr. Grumpy Face today. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in
+            a football match, didn't you? Aw, you're all Mr. Grumpy Face today. They're not aliens, they're Earth…liens! You hit me with a cricket bat. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying
+            to make you feel better?</p>
+          <div class="calendar__tickets">
+            <div class="calendar__available">Available Tickets: 12</div>
+            {{#link-to "calendar.detail" class="calendar__claim" }}Claim Ticket{{/link-to}}
+          </div>
+        </div>
+      </div>
+      {{outlet}}
+    </div>
+  </div>
