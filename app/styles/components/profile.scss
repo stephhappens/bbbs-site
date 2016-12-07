@@ -12,6 +12,20 @@
   align-items: center;
 }
 
+&__btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+  padding: 0.3rem 0.5rem;
+  border: 0;
+  background: $c-primary;
+  color: $c-white;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 &__content {
 display: flex;
 flex-direction: column;
