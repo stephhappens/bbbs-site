@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="profile_heading">Welcome {{currentUser.user.email}}</h1>
+  <h1 class="profile_heading">Welcome {{currentUser.user.firstName}}</h1>
 
   <div class="profile profile--flex">
     <div class="form__frame">
@@ -8,10 +8,10 @@
     <div class="profile__content">
 
 
-      <div class="profile__content-names">{{model.first-name}} {{model.last-name}}</div>
-      <div class="profile__content-input">{{model.employer}} </div>
-      <div class="profile__content-input">{{model.email}} </div>
-      <div class="profile__content-input"> Little's Name: {{model.little}} </div>
+      <div class="profile__content-names">{{currentUser.user.firstName}} {{currentUser.user.lastName}}</div>
+      <div class="profile__content-input">{{currentUser.user.employer}} </div>
+      <div class="profile__content-input">{{currentUser.user.email}} </div>
+      <div class="profile__content-input"> Little's Name: {{currentUser.user.little}} </div>
 
       {{#link-to "profile.edit" class= "profile__btn"}} Edit Profile {{/link-to}}
     </div>
