@@ -16,7 +16,9 @@ Router.map(function() {
     });
   });
   this.route('register');
-  this.route('profile');
+  this.route('profile', function() {
+    this.route('edit');
+  });
   this.route('calendar', function() {
     this.route('detail');
   });
