@@ -1,16 +1,19 @@
 <div class="container">
-  <h1 class="profile_heading">Welcome Stephanie!</h1>
+  <h1 class="profile_heading">Welcome {{currentUser.user.firstName}}</h1>
 
   <div class="profile profile--flex">
     <div class="form__frame">
       <img src="http://placekitten.com/300/300" class="form__img">
     </div>
     <div class="profile__content">
-      <div class="profile__content-names">Stephanie Winn</div>
-      <div class="profile__content-input">Nashville Area Chamber of Commerce</div>
-      <div class="profile__content-input">swinn@nashvillechamber.com</div>
-      <div class="profile__content-input">Little's Name: Amelia</div>
-        {{#link-to "profile.edit" class= "profile__btn"}} Edit Profile {{/link-to}}
+
+
+      <div class="profile__content-names">{{currentUser.user.firstName}} {{currentUser.user.lastName}}</div>
+      <div class="profile__content-input">{{currentUser.user.employer}} </div>
+      <div class="profile__content-input">{{currentUser.user.email}} </div>
+      <div class="profile__content-input"> Little's Name: {{currentUser.user.little}} </div>
+
+      {{#link-to "profile.edit" class= "profile__btn"}} Edit Profile {{/link-to}}
     </div>
 </div>
 
