@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="profile_heading">Welcome {{currentUser.user.firstName}}!</h1>
+  <h1 class="heading">Welcome {{currentUser.user.firstName}}!</h1>
 
   <div class="profile profile--flex">
     <div class="form__frame">
@@ -16,10 +16,10 @@
       {{#link-to "profile.edit" class= "profile__btn"}} Edit Profile {{/link-to}}
     </div>
 </div>
-</div>
+{{!-- </div>
 
-<div class="container">
-  <h1 class="calendar__heading">Upcoming Events</h1>
+<div class="container"> --}}
+  <h1 class="heading">Upcoming Events</h1>
     <div class="calendar">
       <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button>
       {{#each model as |value|}}

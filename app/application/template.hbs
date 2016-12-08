@@ -9,10 +9,10 @@
       <div class="top-nav__group">
         {{#if session.isAuthenticated}}
         <a class="top-nav__item" href="#" {{action session.invalidate}}>Logout</a>
-        {{#link-to "calendar" class="top-nav__item"}} Calendar {{/link-to}}
-        {{#link-to "index" class="top-nav__item" }} Messages {{/link-to}}
+        {{#link-to "calendar" class="top-nav__item"}}Calendar{{/link-to}}
+        {{#link-to "profile" class="top-nav__item"}}Profile{{/link-to}}
         {{else}}
-          {{#link-to "index" class="top-nav__item" }} Login {{/link-to}}
+          {{#link-to "index" class="top-nav__item"}}Login{{/link-to}}
         {{/if}}
       </div>
       </div>
