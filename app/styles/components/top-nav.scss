@@ -1,9 +1,25 @@
 .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url('http://www.mentorakid.org/atf/cf/%7B409bbba9-6fe0-48c1-9c2d-fdb43180f5b1%7D/slider-5.png') no-repeat center;
   background-size: cover;
   height: 30rem;
-  filter: blur(.7px) grayscale(70%);
+  // filter: blur(.7px) grayscale(70%);
 
+  &__headline {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: $c-accent;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 0.2rem solid $c-accent;
+  }
+
+  &__headline-tag {
+    margin: 0.2rem;
+    text-align: center;
+  }
 }
 
 .top-nav {

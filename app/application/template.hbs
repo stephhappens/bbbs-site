@@ -9,14 +9,18 @@
       <div class="top-nav__group">
         {{#if session.isAuthenticated}}
         <a class="top-nav__item" href="#" {{action session.invalidate}}>Logout</a>
+        {{#link-to "calendar" class="top-nav__item"}} Calendar {{/link-to}}
+        {{#link-to "index" class="top-nav__item" }} Messages {{/link-to}}
         {{else}}
           {{#link-to "index" class="top-nav__item" }} Login {{/link-to}}
         {{/if}}
-        {{#link-to "calendar" class="top-nav__item"}} Calendar {{/link-to}}
-        {{#link-to "index" class="top-nav__item" }} Messages {{/link-to}}
       </div>
       </div>
       <div class="hero">
+        <div class="hero__headline">
+          <p class="hero__headline-tag">Changing perspectives.</p>
+          <p class="hero__headline-tag">Changing lives.</p>
+        </div>
       </div>
     </div>
   </div>
