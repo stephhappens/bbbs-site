@@ -12,8 +12,11 @@ Router.map(function() {
     this.route('homepage', function() {
       this.route('announcements');
       this.route('event');
-      this.route('user');
-    });
+
+      this.route('user', function(){
+        this.route('detail', {path: `/:user_id`})
+      });
+     });
   });
   this.route('register');
   this.route('profile', function() {
@@ -23,5 +26,4 @@ Router.map(function() {
     this.route('detail');
   });
 });
-
 export default Router;

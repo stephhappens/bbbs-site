@@ -1,0 +1,9 @@
+  <div class="container">
+  <div class="grid">
+    {{#each model as |user|}}
+      <div class="card">
+       {{#link-to "admin.homepage.user.detail" user.id class="grid__item user__card"}} {{user.firstName}} {{user.lastName}} {{/link-to}}
+      </div>
+    {{/each}}
+      </div>
+      </div>
