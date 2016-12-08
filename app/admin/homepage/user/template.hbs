@@ -1,41 +1,12 @@
-<div class="container">
-  <div class="form">
-    <img src="/images/bbbs.png" class="form__logo" alt="BB/BS Logo">
-    <div class="form__info form__info--row">
-      <div class="form__info-group form__info-group--center">
-        <div class="form__frame">
-          <img src="http://placekitten.com/300/300" class="form__img">
-        </div>
+  <div class="container">
+  <div class="grid">
+    {{#each model as |user|}}
+      <div class="card">
+       {{#link-to "admin.index" class="grid__item"}} {{user.firstName}} {{user.lastName}} {{/link-to}}
       </div>
-      <div class="form__right">
-        <div class="form__info-group">
-          <label class="form__label" for="firstName">First Name</label>
-          <input class="form__input" type="text" id="firstName" required=true>
-        </div>
-        <div class="form__info-group">
-          <label class="form__label" for="lastName">Last Name</label>
-          <input class="form__input" type="text" id="lastName" required=true>
-        </div>
-        <div class="form__info-group">
-          <label class="form__label" for="Email">Email</label>
-          <input class="form__input" type="text" id="Email" required=true>
-        </div>
-        <div class="form__info-group">
-          <label class="form__label" for="employer">Employer or School</label>
-          <input class="form__input" type="text" id="employer" required=true>
-        </div>
-        <div class="form__info-group">
-          <label class="form__label" for="phone">Phone</label>
-          <input class="form__input" type="text" id="phone" required=true>
-        </div>
-        <div class="form__info-group">
-          <label class="form__label" for="little">Little's Name</label>
-          <input class="form__input" type="text" id="little" required=true>
-        </div>
+    {{/each}}
       </div>
-    </div>
-      <div class="form__buttons">
-        <button class="form__btn">Approve this User?</button>
       </div>
-  </div>
-</div>
+  {{!-- <div class="form__buttons">
+    <button class="form__btn">Approve this User?</button>
+  </div> --}}
