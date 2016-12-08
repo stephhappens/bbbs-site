@@ -4,12 +4,12 @@ export default Ember.Controller.extend({
   currentUser: Ember.inject.service(),
 
   actions: {
-    saveForm(formValues) {
-      this.model.setProperties(formValues);
+    saveForm(user, formValues) {
+      user.setProperties(formValues);
 
-      this.model.save()
+      user.save()
         .then(() => {
-          this.transistionToRoute('profile');
+          this.transitionToRoute('profile');
         });
     },
   },
