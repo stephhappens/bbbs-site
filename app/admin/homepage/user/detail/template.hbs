@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card form">
+    <h4>First Name:  {{model.firstName}}</h4>
+    <h4>Last Name: {{model.lastName}}</h4>
+    <h4>Email:  {{model.email}}</h4>
+    <h4>Phone Number:  {{model.phone}}</h4>
+    <h4>Address: {{model.address}}</h4>
+    <h4>Little's Name: {{model.little}}</h4>
+    <h4>Admin: {{if model.isAdmin "🏁"}}</h4>
+    <h4>Approved: {{if model.isApproved "🏁"}}</h4>
+    <div class="form__buttons">
+      <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve this User?</button>
+      <button class="form__btn--accent" {{action "toggleAndSave" "isAdmin"}}>Make this User admin?</button>
+      <button class="form__btn--accent" {{action "deleteUser"}}>Delete User</button>
+    </div>
+    </div>
+</div>
