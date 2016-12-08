@@ -1,9 +1,28 @@
 import Ember from 'ember';
+import config from 'bbbs-site/config/environment';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  filesystem: Ember.inject.service(),
+
   actions: {
     saveUser(formValues) {
+      // How to save if we are uploading an image
+      if (formValues.uploadFile) {
+        return this.get('filesystem').fetch(`${config.DS.host}/api/users`, {
+          method: 'POST',
+          headers: {
+            accept: 'application/json',
+          },
+          body: {...formValues},
+        }).then((res) => res.json())
+        .then((data) => {
+          this.store.pushPayload(data);
+          this.transitionToRoute('calendar');
+        });
+      }
+
+      // Save like normal ember data
       // Create a new user model
       const user = this.store.createRecord('user', formValues)
       // Save the new user model
@@ -24,6 +43,13 @@ export default Ember.Controller.extend({
         console.log(e)
         alert('Error creating user');
       });
+    },
+
+    choosePic(formValues) {
+      this.get('filesystem').prompt()
+        .then((upload) => {
+          formValues.set('uploadFile', upload[0]);
+        });
     },
   },
 });
