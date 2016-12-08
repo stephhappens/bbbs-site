@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="profile_heading">Welcome {{currentUser.user.firstName}}</h1>
+  <h1 class="profile_heading">Welcome {{currentUser.user.firstName}}!</h1>
 
   <div class="profile profile--flex">
     <div class="form__frame">
@@ -16,24 +16,29 @@
       {{#link-to "profile.edit" class= "profile__btn"}} Edit Profile {{/link-to}}
     </div>
 </div>
-
-
-  <div class="calendar">
-    <h1 class="calendar__heading">Upcoming Events</h1>
-    <div class="calendar__group">
-      <div class="calendar__sidebar">
-        <p class="calendar__sidebar-date">Dec 1</p>
-      </div>
-      <div class="calendar__main">
-        <p class="calendar__event">The Iron Yard - Kids Code Night</p>
-        <p class="calendar__date">Thursday, December 1, 2016</p>
-        <p class="calendar__location">613 Ewing Avenue Nashville, TN 37203</p>
-        <p class="calendar__time">4:30pm - 6:30pm</p>
-        <p class="calendar__description">Aw, you're all Mr. Grumpy Face today. Aw, you're all Mr. Grumpy Face today. Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in
-          a football match, didn't you? Aw, you're all Mr. Grumpy Face today. They're not aliens, they're Earth…liens! You hit me with a cricket bat. You know when grown-ups tell you 'everything's going to be fine' and you think they're probably lying
-          to make you feel better?</p>
-
-      </div>
-    </div>
 </div>
+
+<div class="container">
+  <h1 class="calendar__heading">Upcoming Events</h1>
+    <div class="calendar">
+      <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+      {{#each model as |value|}}
+      <div class="calendar__group">
+        <div class="calendar__sidebar">
+          <p class="calendar__sidebar-date">{{moment-format value.date "MMM D"}}</p>
+        </div>
+        <div class="calendar__main">
+          <p class="calendar__event">{{ value.name }}</p>
+          <p class="calendar__date">{{moment-format value.date "dddd, MMMM Do"}}</p>
+          <p class="calendar__location">{{ value.location }}</p>
+          <p class="calendar__time">{{moment-format value.startTime "hh:mm A" "HH:mm"}} - {{moment-format value.endTime "hh:mm A" "HH:mm"}}</p>
+          <p class="calendar__description">{{ value.message }}</p>
+          <div class="calendar__tickets">
+            <div class="calendar__available">Available Tickets: {{ value.tickets }}</div>
+            {{#link-to "calendar.detail" class="calendar__claim" }}Claim Ticket{{/link-to}}
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
 </div>

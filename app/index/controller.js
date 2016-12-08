@@ -13,6 +13,8 @@ export default Ember.Controller.extend({
 
       // Login user
       this.get('session').authenticate(authenticator, secretStuff);
+      //Redirect
+      this.transitionToRoute('profile');
     }
   }
 });
