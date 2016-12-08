@@ -8,6 +8,7 @@
   // filter: blur(.7px) grayscale(70%);
 
   &__headline {
+    margin: 1rem;
     padding: 1rem 2rem;
     font-size: 2rem;
     color: $c-accent;
@@ -19,6 +20,7 @@
   &__headline-tag {
     margin: 0.2rem;
     text-align: center;
+    text-shadow: 1px 1px $c-darkgrey;
   }
 }
 
