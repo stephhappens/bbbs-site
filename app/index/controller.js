@@ -12,7 +12,11 @@ export default Ember.Controller.extend({
       const authenticator = 'authenticator:jwt';
 
       // Login user
-      this.get('session').authenticate(authenticator, secretStuff);
+      this.get('session').authenticate(authenticator, secretStuff)
+        .then(() => {
+          this.transitionToRoute('profile');
+        });
+      //Redirect
     }
   }
 });
