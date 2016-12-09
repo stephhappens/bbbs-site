@@ -23,7 +23,7 @@ Router.map(function () {
     this.route('edit');
   });
   this.route('calendar', function () {
-    this.route('detail');
+    this.route('detail', {path: '/:event_id/tickets'});
   });
 });
 export default Router;
