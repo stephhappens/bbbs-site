@@ -2,13 +2,14 @@
   {{#simple-form class="modal__card" onsubmit=(action "saveForm") as |formValues|}}
     <div class="modal__content">
       {{#link-to "calendar" class="modal__exit"}}<i class="fa fa-times" aria-hidden="true"></i>{{/link-to}}
-      <p class="modal__header">How many tickets would you like to claim?</p>
-      <select class="modal__options" id="">
-        <option value="formValues.ticket">1</option>
-        <option value="formValues.ticket">2</option>
-        <option value="formValues.ticket">3</option>
-        <option value="formValues.ticket">4</option>
-      </select>
+      <p class="modal__header">How many tickets would you like to claim for {{model.name}}?</p>
+      {{#power-select
+        options=tickets
+        selected=formValues.quantity
+        onchange=(action (mut formValues.quantity))
+        class="modal__options" as |value|}}
+        {{value}}
+      {{/power-select}}
     </div>
     <button class="modal__btn" type="submit">Submit</button>
   {{/simple-form}}

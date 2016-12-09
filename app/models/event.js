@@ -7,6 +7,7 @@ export default DS.Model.extend({
   startTime: DS.attr('string'),
   endTime: DS.attr('string'),
   tickets: DS.attr('number'),
+  remainingTickets: DS.attr('number'),
   users: DS.hasMany('user'),
   message: DS.attr('string'),
 });
