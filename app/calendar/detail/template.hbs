@@ -3,12 +3,14 @@
     <div class="modal__content">
       {{#link-to "calendar" class="modal__exit"}}<i class="fa fa-times" aria-hidden="true"></i>{{/link-to}}
       <p class="modal__header">How many tickets would you like to claim for {{model.name}}?</p>
-      <select class="modal__options" id="">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
+      {{#power-select
+        options=tickets
+        selected=initial
+        onchange=(action "chooseAmount")
+        class="modal__options"
+         as |value|}}
+        {{value}}
+      {{/power-select}}
     </div>
     <button class="modal__btn" type="submit">Submit</button>
   {{/simple-form}}
