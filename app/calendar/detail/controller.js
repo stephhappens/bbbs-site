@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
       this.model.save()
       .then(() => {
       });
+
       return this.transitionToRoute('calendar');
     },
 },

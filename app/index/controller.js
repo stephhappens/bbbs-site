@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
         .then(() => {
           this.transitionToRoute('calendar');
         });
-      //Redirect
+      // Redirect
     }
   }
 });

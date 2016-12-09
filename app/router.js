@@ -6,23 +6,23 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
-  this.route('admin', function() {
+Router.map(function () {
+  this.route('admin', function () {
     this.route('login');
-    this.route('homepage', function() {
+    this.route('homepage', function () {
       this.route('announcements');
       this.route('event');
 
-      this.route('user', function(){
-        this.route('detail', {path: `/:user_id`})
+      this.route('user', function () {
+        this.route('detail', { path: '/:user_id' });
       });
-     });
+    });
   });
   this.route('register');
-  this.route('profile', function() {
+  this.route('profile', function () {
     this.route('edit');
   });
-  this.route('calendar', function() {
+  this.route('calendar', function () {
     this.route('detail');
   });
 });

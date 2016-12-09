@@ -14,8 +14,8 @@ export default Ember.Controller.extend({
           headers: {
             accept: 'application/json',
           },
-          body: {...formValues},
-        }).then((res) => res.json())
+          body: { ...formValues },
+        }).then(res => res.json())
         .then((data) => {
           this.store.pushPayload(data);
           this.transitionToRoute('calendar');
@@ -24,7 +24,7 @@ export default Ember.Controller.extend({
 
       // Save like normal ember data
       // Create a new user model
-      const user = this.store.createRecord('user', formValues)
+      const user = this.store.createRecord('user', formValues);
       // Save the new user model
       user.save()
       .then(() => {
@@ -40,7 +40,6 @@ export default Ember.Controller.extend({
         this.transitionToRoute('profile');
       })
       .catch((e) => {
-        console.log(e)
         alert('Error creating user');
       });
     },

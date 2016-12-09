@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
     },
 
     deleteUser() {
-      const no = this.model
+      const no = this.model;
       no.destroyRecord().then(() => {
         this.transitionToRoute('admin.homepage.user');
       });

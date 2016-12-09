@@ -6,9 +6,7 @@ export default Ember.Controller.extend({
       const event = this.store.createRecord('event', formValues);
 
       event.save()
-      .then(() => {
-        return this.transitionToRoute('admin.homepage');
-      });
+      .then(() => this.transitionToRoute('admin.homepage'));
     },
   },
 });
