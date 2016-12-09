@@ -29,8 +29,8 @@
           {{#if flash.componentName}}
             {{component flash.componentName content=flash.content}}
           {{else}}
-            <h6>{{component.flashType}}</h6>
-            <p>{{flash.message}}</p>
+            {{!-- <h6>{{component.flashType}}</h6> --}}
+            <p class="flash-announcement"> {{flash.message }} </p>
           {{/if}}
         {{/flash-message}}
       {{/each}}

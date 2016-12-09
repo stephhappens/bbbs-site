@@ -16,3 +16,16 @@ a {
   color: inherit;
 }
 }
+
+.alert-success  p {
+  display: flex;
+  margin: 0;
+  background: $c-dangerzone;
+  padding: 1rem 0;
+  color: $c-white;
+}
+
+// .alert {
+//   display: flex;
+//   padding: 1rem 0;
+// }
