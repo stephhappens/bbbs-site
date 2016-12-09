@@ -1,7 +1,6 @@
 <div class="container">
   <div class="calendar">
-    <h3 class="calendar__header">Upcoming Events</h3>
-    {{!-- <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button> --}}
+    <h3 class="calendar__header">Upcoming Events</h3>{{!-- <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button> --}}
     {{#each model as |event|}}
       <div class="calendar__group">
         <div class="calendar__sidebar">
@@ -14,8 +13,12 @@
           <p class="calendar__time">{{moment-format event.startTime "hh:mm A" "HH:mm"}} - {{moment-format event.endTime "hh:mm A" "HH:mm"}}</p>
           <p class="calendar__description">{{ event.message }}</p>
           <div class="calendar__tickets">
-            <div class="calendar__available">Available Tickets: {{ event.remainingTickets }}</div>
-            {{#link-to "calendar.detail" event class="calendar__claim" }}Claim Ticket{{/link-to}}
+            {{#if (lte event.remainingTickets 0)}}
+              <div class="calendar__available calendar__available--zero">No Tickets Remaining</div>
+            {{else}}
+              <div class="calendar__available">Available Tickets: {{ event.remainingTickets }}</div>
+              {{#link-to "calendar.detail" event class="calendar__claim" }}Claim Ticket{{/link-to}}
+            {{/if}}
 
             {{#if currentUser.user.isAdmin}}
               <button class="calendar__delete" {{action "deleteEvent"}}>Delete Event</button>

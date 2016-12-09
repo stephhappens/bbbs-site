@@ -80,6 +80,10 @@
     color: $c-white;
     font-size: 0.8rem;
     border-radius: 0.4rem;
+
+    &--zero {
+      background: $c-danger;
+    }
   }
 
   &__delete {

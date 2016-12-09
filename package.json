@@ -49,6 +49,7 @@
     "ember-simple-auth": "1.1.0",
     "ember-simple-auth-token": "1.2.0",
     "ember-simple-form": "2.1.0",
+    "ember-truth-helpers": "1.2.0",
     "eslint-config-rtablada": "^4.0.0",
     "loader.js": "^4.0.10"
   }
