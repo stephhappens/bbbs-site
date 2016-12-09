@@ -5,10 +5,9 @@
       <p class="modal__header">How many tickets would you like to claim for {{model.name}}?</p>
       {{#power-select
         options=tickets
-        selected=initial
-        onchange=(action "chooseAmount")
-        class="modal__options"
-         as |value|}}
+        selected=formValues.quantity
+        onchange=(action (mut formValues.quantity))
+        class="modal__options" as |value|}}
         {{value}}
       {{/power-select}}
     </div>

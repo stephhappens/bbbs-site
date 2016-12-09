@@ -7,11 +7,11 @@ export default Ember.Controller.extend({
 
   actions: {
     saveForm(formValues) {
-      this.model.setProperties(formValues);
-      this.model.save()
-        .then(() => {});
+      const ticket = this.store.createRecord('ticket', formValues);
+      ticket.set('event', this.model);
 
-      return this.transitionToRoute('calendar');
+      ticket.save()
+        .then(() => this.transitionToRoute('calendar'));
     },
 
     chooseAmount(tickets) {
