@@ -102,6 +102,22 @@
       text-decoration: none;
     }
 
+    &--middle {
+      background: $c-accent;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    &--danger {
+      background: $c-dangerzone;
+      border-bottom-right-radius: 0.4rem;
+      border-bottom-left-radius: 0.4rem;
+      text-align: center;
+      text-decoration: none;
+
+
+    }
+
     &--upload {
       padding: 0.4rem;
       background: $c-accent;
