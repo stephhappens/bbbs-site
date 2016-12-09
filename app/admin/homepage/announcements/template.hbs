@@ -5,25 +5,35 @@
 
     <div class="form__info">
 
-      <div class="form__info-group">
+      {{!-- <div class="form__info-group">
         <label for="name" class="form__label">Admin Name</label>
-        <input type="text" class="form__input" id="name">
-      </div>
+        {{input type="text" class="form__input" id="name"}}
+      </div> --}}
 
 
       <div class="form__info-group">
         <label for="subject" class="form__label">Subject</label>
-        <input type="text" class="form__input" id="subject">
+        {{input type="text" class="form__input" id="subject" value=formValues.subject}}
       </div>
 
       <div class="form__info-group">
         <label for="message" class="form__label">Short Message</label>
-        <textarea name="Message" rows="8" cols="40" id="message"></textarea>
+        {{textarea name="Message" rows="8" cols="40" id="message" value=formValues.message}}
       </div>
 
     </div>
-      <div class="form__buttons">
-        <button class="form__btn">Submit</button>
-      </div>
+    <div class="form__buttons">
+      <button class="form__btn">Submit</button>
+      {{#each flashMessages.queue as |flash|}}
+        {{#flash-message flash=flash as |component flash|}}
+          {{#if flash.componentName}}
+            {{component flash.componentName content=flash.content}}
+          {{else}}
+            <h6>{{component.flashType}}</h6>
+            <p>{{flash.message}}</p>
+          {{/if}}
+        {{/flash-message}}
+      {{/each}}
+    </div>
   {{/simple-form}}
 </div>
