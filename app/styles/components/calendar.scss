@@ -72,6 +72,19 @@
     border-radius: 0.4rem;
   }
 
+  &__delete {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    background: $c-dangerzone;
+    color: $c-white;
+    font-size: 0.8rem;
+    border-radius: 0.4rem;
+    outline: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
   &__claim {
     margin-left: 0.5rem;
     padding: 0.3rem 0.5rem;

@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="calendar">
-      <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button>
-      {{#each model as |value|}}
+  <div class="calendar">
+    <button class="calendar__btn">Sort By<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+    {{#each model as |value|}}
       <div class="calendar__group">
         <div class="calendar__sidebar">
           <p class="calendar__sidebar-date">{{moment-format value.date "MMM D"}}</p>
@@ -15,10 +15,14 @@
           <div class="calendar__tickets">
             <div class="calendar__available">Available Tickets: {{ value.tickets }}</div>
             {{#link-to "calendar.detail" class="calendar__claim" }}Claim Ticket{{/link-to}}
+
+            {{#if currentUser.user.isAdmin}}
+              <button class="calendar__delete" {{action "deleteEvent"}}>Delete Event</button>
+            {{/if}}
           </div>
         </div>
       </div>
-      {{/each}}
-    </div>
+    {{/each}}
+  </div>
 </div>
 {{ outlet }}
