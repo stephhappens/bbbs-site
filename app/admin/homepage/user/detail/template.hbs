@@ -10,8 +10,8 @@
     <h4>Approved: {{if model.isApproved "🏁"}}</h4>
     <div class="form__buttons">
       <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve this User?</button>
-      <button class="form__btn--accent" {{action "toggleAndSave" "isAdmin"}}>Make this User admin?</button>
-      <button class="form__btn--accent" {{action "deleteUser"}}>Delete User</button>
+      <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Make this User admin?</button>
+      <button class="form__btn form__btn--danger" {{action "deleteUser"}}>Delete User</button>
     </div>
-    </div>
+  </div>
 </div>

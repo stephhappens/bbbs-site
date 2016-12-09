@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
+
   actions: {
     saveForm(formValues) {
       this.model.setProperties(formValues);
@@ -9,5 +11,5 @@ export default Ember.Controller.extend({
       });
       return this.transitionToRoute('calendar');
     },
-  },
+},
 });
