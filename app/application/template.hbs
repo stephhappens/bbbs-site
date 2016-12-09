@@ -8,7 +8,7 @@
 
       <div class="top-nav__group">
         {{#if session.isAuthenticated}}
-        <a class="top-nav__item" href="#" {{action session.invalidate}}>Logout</a>
+        <a class="top-nav__item" href="/index" {{action session.invalidate}}>Logout</a>
         {{#link-to "calendar" class="top-nav__item"}}Calendar{{/link-to}}
         {{#link-to "profile" class="top-nav__item"}}Profile{{/link-to}}
         {{else}}

@@ -37,7 +37,8 @@ export default Ember.Controller.extend({
         // Login user
         this.get('session').authenticate(authenticator, secretStuff);
         // Redirect
-        this.transitionToRoute('profile');
+        alert('You will need to be approved by the admin before accessing the site.');
+        this.transitionToRoute('index');
       })
       .catch((e) => {
         alert('Error creating user');
