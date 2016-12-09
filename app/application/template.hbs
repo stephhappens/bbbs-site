@@ -1,32 +1,46 @@
 <div class="app">
   <div class="app__top">
-      <div class="top-nav">
+    <div class="top-nav">
       <div class="top-nav__group">
         <div class="top-nav__logo">
-        <img src="/images/bbbs.png" class="top-nav__logo" alt=""></div>
+          <img src="/images/bbbs.png" class="top-nav__logo" alt="">
+        </div>
       </div>
 
       <div class="top-nav__group">
         {{#if session.isAuthenticated}}
+<<<<<<< admin-homepage
+          <a class="top-nav__item" href="#" {{action session.invalidate}}>Logout</a>
+          {{#link-to "calendar" class="top-nav__item" }}Calendar{{/link-to}}
+          {{#link-to "profile" class="top-nav__item" }}Profile{{/link-to}}
+=======
         <a class="top-nav__item" href="/index" {{action session.invalidate}}>Logout</a>
         {{#link-to "calendar" class="top-nav__item"}}Calendar{{/link-to}}
         {{#link-to "profile" class="top-nav__item"}}Profile{{/link-to}}
+>>>>>>> master
         {{else}}
-          {{#link-to "index" class="top-nav__item"}}Login{{/link-to}}
+          {{#link-to "index" class="top-nav__item" }}Login{{/link-to}}
         {{/if}}
       </div>
-      </div>
-      <div class="hero">
-        <div class="hero__headline">
-          <p class="hero__headline-tag">Changing perspectives.</p>
-          <p class="hero__headline-tag">Changing lives.</p>
-        </div>
+    </div>
+    <div class="hero">
+      <div class="hero__headline">
+        <p class="hero__headline-tag">Changing perspectives.</p>
+        <p class="hero__headline-tag">Changing lives.</p>
       </div>
     </div>
   </div>
+</div>
 
 
 
-  <div class="app__content">
-    {{ outlet }}
-  </div>
+<div class="app__content">
+  {{#each flashMessages.queue as |flash|}}
+    {{#flash-message flash=flash as |component flash|}}
+      {{!-- <h6>{{component.flashType}}</h6> --}}
+      <p class="jello">{{flash.message}}</p>
+    {{/flash-message}}
+  {{/each}}
+
+  {{ outlet }}
+</div>

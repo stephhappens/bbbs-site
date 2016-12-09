@@ -1,29 +1,29 @@
 <div class="container">
-  <div class="form">
+  {{#simple-form class="form" onsubmit=(action "saveMessage") as |formValues|}}
     <img src="/images/bbbs.png" alt="bbbs logo" class="form__logo">
     <h1 class="form__header">Post an Announcement</h1>
 
     <div class="form__info">
 
-      <div class="form__info-group">
+      {{!-- <div class="form__info-group">
         <label for="name" class="form__label">Admin Name</label>
-        <input type="text" class="form__input" id="name">
-      </div>
+        {{input type="text" class="form__input" id="name"}}
+      </div> --}}
 
 
       <div class="form__info-group">
         <label for="subject" class="form__label">Subject</label>
-        <input type="text" class="form__input" id="subject">
+        {{input type="text" class="form__input" id="subject" value=formValues.subject}}
       </div>
 
       <div class="form__info-group">
         <label for="message" class="form__label">Short Message</label>
-        <textarea name="Message" rows="8" cols="40" id="message"></textarea>
+        {{textarea name="Message" rows="8" cols="40" id="message" value=formValues.message}}
       </div>
 
     </div>
-      <div class="form__buttons">
-        <button class="form__btn">Submit</button>
-      </div>
-  </div>
+    <div class="form__buttons">
+      <button class="form__btn">Submit</button>
+    </div>
+  {{/simple-form}}
 </div>
