@@ -1,49 +1,48 @@
 <div class="container container--vertical">
   {{#simple-form class="form" onsubmit=(action "saveForm") as |formValues|}}
-      <img src="/images/bbbs.png" alt="bbbs logo" class="form__logo">
-      <h1 class="form__header">Add an Event</h1>
+    <img src="/images/bbbs.png" alt="bbbs logo" class="form__logo">
+    <h1 class="form__header">Add an Event</h1>
 
-      <div class="form__info">
+    <div class="form__info">
 
-        <div class="form__info-group">
-          <label for="event" class="form__label">Event Name</label>
-          {{input type="text" class="form__input" value=formValues.name id="event"}}
-        </div>
-
-        <div class="form__info-group">
-          <label for="date" class="form__label">Date</label>
-          {{input type="date" class="form__input" value=formValues.date id="date"}}
-        </div>
-
-
-          <div class="form__info-group form__info-group--flex">
-            <label for="startTime" class="form__label">Start Time</label>
-            {{input type="time" class="form__input" value=formValues.startTime id="startTime"}}
-          {{!-- </div> --}}
-
-          {{!-- <div class="form__info-group"> --}}
-            <label for="endTime" class="form__label">End Time</label>
-            {{input type="time" class="form__input" value=formValues.endTime id="endTime"}}
-          </div>
-
-          <div class="form__info-group">
-            <label for="location" class="form__label">Address</label>
-            {{input type="text" class="form__input" value=formValues.location id="location"}}
-          </div>
-
-          <div class="form__info-group">
-            <label for="tickets" class="form__label">Number of Available Tickets</label>
-            {{input type="number" class="form__input" value=formValues.tickets id="tickets"}}
-          </div>
-
-        <div class="form__info-group">
-          <label for="description" class="form__label">Short Description</label>
-          {{textarea name="Message" rows="8" cols="40" value=formValues.message id="description"}}
-        </div>
-
+      <div class="form__info-group">
+        <label for="event" class="form__label">Event Name</label>
+        {{input type="text" class="form__input" value=formValues.name id="event"}}
       </div>
-        <div class="form__buttons">
-          <button class="form__btn" type="submit">Submit</button>
-        </div>
-    <{{/simple-form}}
+
+      <div class="form__info-group">
+        <label for="date" class="form__label">Date</label>
+        {{input type="date" class="form__input" value=formValues.date id="date"}}
+      </div>
+
+
+      <div class="form__info-group form__info-group--flex">
+        <label for="startTime" class="form__label form__label--time">Start Time</label>{{!-- </div> --}}
+        {{input type="time" class="form__input" value=formValues.startTime id="startTime"}}
+
+        {{!-- <div class="form__info-group"> --}}
+        <label for="endTime" class="form__label form__label--time">End Time</label>
+        {{input type="time" class="form__input" value=formValues.endTime id="endTime"}}
+      </div>
+
+      <div class="form__info-group">
+        <label for="location" class="form__label">Address</label>
+        {{input type="text" class="form__input" value=formValues.location id="location"}}
+      </div>
+
+      <div class="form__info-group">
+        <label for="tickets" class="form__label">Number of Available Tickets</label>
+        {{input type="number" class="form__input" value=formValues.tickets id="tickets"}}
+      </div>
+
+      <div class="form__info-group">
+        <label for="description" class="form__label">Short Description</label>
+        {{textarea name="Message" rows="8" cols="40" value=formValues.message id="description"}}
+      </div>
+
     </div>
+    <div class="form__buttons">
+      <button class="form__btn" type="submit">Submit</button>
+    </div>
+    <{{/simple-form}}
+  </div>

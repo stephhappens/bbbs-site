@@ -76,6 +76,14 @@
 
   &__label {
     font-size: 0.8rem;
+
+    &--time {
+    margin: 0 0.5rem;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+    }
   }
 
   &__input {
