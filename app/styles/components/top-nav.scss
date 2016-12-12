@@ -15,6 +15,10 @@
     font-weight: bold;
     text-transform: uppercase;
     border: 0.2rem solid $c-accent;
+
+    @media (max-width: 420px) {
+      padding: 1rem;
+    }
   }
 
   &__headline-tag {
