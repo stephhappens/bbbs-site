@@ -6,7 +6,6 @@
   background: url('http://www.mentorakid.org/atf/cf/%7B409bbba9-6fe0-48c1-9c2d-fdb43180f5b1%7D/slider-5.png') no-repeat center;
   background-size: cover;
   height: 30rem;
-  // filter: blur(.7px) grayscale(70%);
 
   &__headline {
     margin: 1rem;
@@ -34,7 +33,6 @@
   padding: 0 1rem;
   background: $c-darkgrey;
   color: $c-background;
-  // opacity: 0.95;
   z-index: 2;
 
   &__logo {
@@ -53,6 +51,7 @@
 
     &:hover {
       color: $c-primary;
+      text-shadow: 1px 1px #000;
     }
   }
 }
