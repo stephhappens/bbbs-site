@@ -1,13 +1,13 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
-  var ENV = {
+module.exports = function (environment) {
+  const ENV = {
     DS: {
       host: 'http://localhost:3333',
       namespace: 'api',
     },
     modulePrefix: 'bbbs-site',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -24,6 +24,7 @@ module.exports = function(environment) {
 
     'ember-simple-auth': {
       authorizer: 'authorizer:token',
+      authenticationRoute: 'index'
     },
 
     'ember-simple-auth-token': {},

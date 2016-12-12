@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
+  currentUser: Ember.inject.service(),
 
   actions: {
     login(formValues) {
@@ -13,7 +14,7 @@ export default Ember.Controller.extend({
 
       // Login user
       this.get('session').authenticate(authenticator, secretStuff)
-        .then(() => {
+        .then(() => this.get('currentUser').loadCurrentUser()).then(() => {
           this.transitionToRoute('calendar');
         });
       // Redirect
