@@ -1,16 +1,20 @@
 <div class="container">
-  <div class="card form">
-    <h4>First Name:  {{model.firstName}}</h4>
-    <h4>Last Name: {{model.lastName}}</h4>
-    <h4>Email:  {{model.email}}</h4>
-    <h4>Phone Number:  {{model.phone}}</h4>
-    <h4>Address: {{model.address}}</h4>
-    <h4>Little's Name: {{model.little}}</h4>
-    <h4>Admin: {{if model.isAdmin "🏁"}}</h4>
-    <h4>Approved: {{if model.isApproved "🏁"}}</h4>
+  <div class="form form--user">
+    <div class="card--user">
+      <h4 class="card__info">Name: {{model.firstName}} {{model.lastName}}</h4>
+      <h4 class="card__info">Email: {{model.email}}</h4>
+      <h4 class="card__info">Phone Number: {{model.phone}}</h4>
+      <h4 class="card__info">Little's Name: {{model.little}}</h4>
+      <h4 class="card__info">Admin: {{if model.isAdmin "🏁"}}</h4>
+      <h4 class="card__info">Approved: {{if model.isApproved "🏁"}}</h4>
+    </div>
     <div class="form__buttons">
-      <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve this User?</button>
-      <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Make this User admin?</button>
+      <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve User</button>
+      {{#if model.isAdmin}}
+        <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Remove Admin Access</button>
+      {{else}}
+        <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Make User Admin</button>
+      {{/if}}
       <button class="form__btn form__btn--danger" {{action "deleteUser"}}>Delete User</button>
     </div>
   </div>

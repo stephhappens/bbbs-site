@@ -5,6 +5,17 @@
   border-radius: 0.4rem;
   box-shadow: $box-shadow;
 
+  &--user {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem auto;
+    width: 60%;
+
+    @media (max-width: 720px) {
+      width: 90%;
+    }
+  }
+
   &__header {
     text-align: center;
     margin-top: .5rem;
