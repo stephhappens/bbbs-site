@@ -11,7 +11,10 @@ Router.map(function () {
     this.route('login');
     this.route('homepage', function () {
       this.route('announcements');
-      this.route('event');
+      this.route('event', function () {
+        this.route('new');
+        this.route('edit', { path: '/:event_id' });
+      });
 
       this.route('user', function () {
         this.route('detail', { path: '/:user_id' });
@@ -23,7 +26,7 @@ Router.map(function () {
     this.route('edit');
   });
   this.route('calendar', function () {
-    this.route('detail', {path: '/:event_id/tickets'});
+    this.route('detail', { path: '/:event_id/tickets' });
   });
 });
 export default Router;

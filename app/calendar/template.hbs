@@ -20,7 +20,7 @@
             {{/if}}
 
             {{#if currentUser.user.isAdmin}}
-              <button class="calendar__delete" {{action "deleteEvent"}}>Delete Event</button>
+              <button class="calendar__delete" {{action "deleteEvent" event}}>Delete Event</button>
             {{/if}}
           </div>
         </div>

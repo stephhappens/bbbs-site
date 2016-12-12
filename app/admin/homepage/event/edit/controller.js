@@ -1,13 +1,17 @@
 import Ember from 'ember';
 
+
 export default Ember.Controller.extend({
-  currentUser: Ember.inject.service('current-user'),
+  currentUser: Ember.inject.service(),
   session: Ember.inject.service(),
 
   actions: {
-    deleteEvent(event) {
-      event.destroyRecord().then(() => {
-        alert('Are you sure you want to delete this event?');
+    saveForm(formValues) {
+      this.model.setProperties(formValues);
+
+      this.model.save()
+      .then(() => {
+        alert('Event Saved!');
         this.transitionToRoute('admin.homepage');
       });
     },
