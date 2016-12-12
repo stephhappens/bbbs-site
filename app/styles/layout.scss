@@ -18,11 +18,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 -1rem;
+  align-items: center;
+  margin: 0 1rem;
 
   &__item {
+    flex-basis: calc(100% / 3 - 2rem);
     flex-grow: 1;
-    margin: 1rem;
+    margin: 0 1rem;
   }
 }
 
