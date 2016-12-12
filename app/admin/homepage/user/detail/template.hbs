@@ -10,7 +10,11 @@
     </div>
     <div class="form__buttons">
       <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve User</button>
-      <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Make User Admin</button>
+      {{#if model.isAdmin}}
+        <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Remove Admin Access</button>
+      {{else}}
+        <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Make User Admin</button>
+      {{/if}}
       <button class="form__btn form__btn--danger" {{action "deleteUser"}}>Delete User</button>
     </div>
   </div>
