@@ -13,6 +13,7 @@
           {{#link-to "calendar" class="top-nav__item" }}Calendar{{/link-to}}
           {{#if currentUser.user.isAdmin}}
             {{#link-to "admin" class="top-nav__item" }}Admin{{/link-to}}
+            {{#link-to "profile" class="top-nav__item" }}Profile{{/link-to}}
           {{else}}
         {{#link-to "profile" class="top-nav__item" }}Profile{{/link-to}}
           {{/if}}
