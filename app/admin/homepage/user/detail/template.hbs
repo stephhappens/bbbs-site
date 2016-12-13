@@ -9,7 +9,11 @@
       <h4 class="card__info">Approved: {{if model.isApproved "🏁"}}</h4>
     </div>
     <div class="form__buttons">
-      <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve User</button>
+      {{#if model.isApproved}}
+        <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Removal Approval</button>
+      {{else}}
+        <button class="form__btn" {{action "toggleAndSave" "isApproved"}}>Approve User</button>
+      {{/if}}
       {{#if model.isAdmin}}
         <button class="form__btn form__btn--middle" {{action "toggleAndSave" "isAdmin"}}>Remove Admin Access</button>
       {{else}}
