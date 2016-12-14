@@ -6,7 +6,7 @@
       <div class="form__info-group form__info-group--center">
         <div class="form__frame">
           {{#if formValues.uploadFile}}
-            {{local-image file=formValues.uploadFile}}
+            {{local-image file=formValues.uploadFile class="form__img"}}
           {{else}}
             <img src="{{currentUser.user.fullProfilePicUrl}}" class="form__img">
           {{/if}}
