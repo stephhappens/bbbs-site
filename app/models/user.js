@@ -12,7 +12,10 @@ export default DS.Model.extend({
   lastName: DS.attr('string'),
   isApproved: DS.attr('boolean'),
   events: DS.hasMany('event'),
+  tickets: DS.hasMany('ticket'),
+
   profilePicUrl: DS.attr('string'),
+
   fullProfilePicUrl: Ember.computed('profilePicUrl', function () {
     return `http://localhost:3333/uploads/${this.get('profilePicUrl')}`;
   }),
