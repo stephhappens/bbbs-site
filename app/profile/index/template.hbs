@@ -6,7 +6,7 @@
     <div class="profile__left-side">
       <div class="profile--flex">
         <div class="profile__frame">
-          <img src="http://vignette1.wikia.nocookie.net/the-mighty-slytherins/images/a/a3/DracoEID.jpg/revision/latest?cb=20150617073623" class="profile__image">
+          <img src="{{currentUser.user.fullProfilePicUrl}}" class="profile__image">
         </div>
 
         <div class="profile__content">
@@ -57,7 +57,7 @@
 
         <div class="profile__card">
           <div class="profile__card-flex">
-            <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
+            <img src="{{currentUser.user.fullProfilePicUrl}}" class="profile__card-image" alt="">
             <div class="profile__card--user">{{message.user.firstName}} {{message.user.lastName}}</div>
           </div>
           <div class="profile__card__info">

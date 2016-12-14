@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   email: DS.attr('string'),
@@ -10,5 +11,9 @@ export default DS.Model.extend({
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   isApproved: DS.attr('boolean'),
-  events: DS.hasMany('event')
+  events: DS.hasMany('event'),
+  profilePicUrl: DS.attr('string'),
+  fullProfilePicUrl: Ember.computed('profilePicUrl', function () {
+    return `http://localhost:3333/uploads/${this.get('profilePicUrl')}`;
+  }),
 });
