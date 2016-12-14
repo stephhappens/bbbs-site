@@ -11,7 +11,11 @@
         {{#if session.isAuthenticated}}
           <a class="top-nav__item" href="#" {{action session.invalidate}}>Logout</a>
           {{#link-to "calendar" class="top-nav__item" }}Calendar{{/link-to}}
-          {{#link-to "profile" class="top-nav__item" }}Profile{{/link-to}}
+          {{#if currentUser.user.isAdmin}}
+            {{#link-to "admin" class="top-nav__item" }}Admin{{/link-to}}
+          {{else}}
+        {{#link-to "profile" class="top-nav__item" }}Profile{{/link-to}}
+          {{/if}}
         {{else}}
           {{#link-to "index" class="top-nav__item" }}Login{{/link-to}}
         {{/if}}
