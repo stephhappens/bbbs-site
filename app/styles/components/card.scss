@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-basis: calc(100% / 3 - 2rem);
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem 0;
+
+  &__name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--last {
+      margin-left: 0.4rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &--info {
+      flex-direction: column;
+      margin-left: 3rem;
+    }
+  }
+
+  &__user {
+    padding: 1rem;
+
+  }
+
+  &__info {
+    font-weight: normal;
+
+  }
+}
