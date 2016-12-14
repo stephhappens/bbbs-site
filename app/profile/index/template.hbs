@@ -18,65 +18,53 @@
           {{#link-to "profile.edit" class="profile__btn" }} Edit Profile {{/link-to}}
         </div>
 
-          <h1 class="heading">Upcoming Events</h1>
-          <div class="calendar">
-            {{#each model as |value|}}
-              <div class="calendar__group">
-                <div class="calendar__sidebar">
-                  <p class="calendar__sidebar-date">{{moment-format value.date "MMM D"}}</p>
-                </div>
-                <div class="calendar__main">
-                  <p class="calendar__event">{{ value.name }}</p>
-                  <p class="calendar__date">{{moment-format value.date "dddd, MMMM Do"}}</p>
-                  <p class="calendar__location">{{ value.location }}</p>
-                  <p class="calendar__time">{{moment-format value.startTime "hh:mm A" "HH:mm"}} - {{moment-format value.endTime "hh:mm A" "HH:mm"}}</p>
-                  <p class="calendar__description">{{ value.message }}</p>
-                  <div class="calendar__tickets">
-                    <div class="calendar__available">Available Tickets: {{ value.tickets }}</div>
-                    {{#link-to "calendar.detail" class="calendar__claim" }}Claim Ticket{{/link-to}}
-                  </div>
+        <h1 class="calendar__heading">Upcoming Events</h1>
+        <div class="calendar">
+          {{#each model as |value|}}
+            <div class="calendar__group">
+              <div class="calendar__sidebar">
+                <p class="calendar__sidebar-date">{{moment-format value.date "MMM D"}}</p>
+              </div>
+              <div class="calendar__main">
+                <p class="calendar__event">{{ value.name }}</p>
+                <p class="calendar__date">{{moment-format value.date "dddd, MMMM Do"}}</p>
+                <p class="calendar__location">{{ value.location }}</p>
+                <p class="calendar__time">{{moment-format value.startTime "hh:mm A" "HH:mm"}} - {{moment-format value.endTime "hh:mm A" "HH:mm"}}</p>
+                <p class="calendar__description">{{ value.message }}</p>
+                <div class="calendar__tickets">
+                  <div class="calendar__available">Available Tickets: {{ value.tickets }}</div>
+                  {{#link-to "calendar.detail" class="calendar__claim" }}Claim Ticket{{/link-to}}
                 </div>
               </div>
-            {{/each}}
-          </div>
-
+            </div>
+          {{/each}}
+        </div>
       </div>
     </div>
+
     <div class="profile__right-side">
-      <div class="messages">
-        <h1 class="messages__heading">Messages</h1>
+        {{#simple-form onsubmit=(action "saveMessage") as |formValues|}}
+        <div class="messages">
+          <h1 class="messages__heading">Messages</h1>
           <label>Post a message!</label>
-            <textarea name="name" rows="8" cols="80"> Hi I am a message that's really cool and you should totally read!</textarea>
+          {{textarea name="Message" rows="8" cols="40" id="message" value=formValues.message}}
+          <button name="Submit" class="form__btn">Submit</button>
+        </div>
+        {{/simple-form}}
 
-              <div class="profile__card">
-                <div class="profile__card-flex">
-                  <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
-                  <div class="profile__card--user">Harry Potter</div>
-                </div>
-                  <div class="profile__card__info">
-                    DRACO IS A DADDY'S BOY!
-                  </div>
-              </div>
+      <div class="profile__flex">
+        {{#each model as |formValues|}}
 
-              <div class="profile__card">
-                <div class="profile__card-flex">
-                  <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
-                  <div class="profile__card--user">Harry Potter</div>
-                </div>
-                  <div class="profile__card__info">
-                    DRACO IS A DADDY'S BOY!
-                  </div>
-              </div>
-
-              <div class="profile__card">
-                <div class="profile__card-flex">
-                  <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
-                  <div class="profile__card--user">Harry Potter</div>
-                </div>
-                  <div class="profile__card__info">
-                    DRACO IS A DADDY'S BOY!
-                  </div>
-              </div>
+        <div class="profile__card">
+          <div class="profile__card-flex">
+            <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
+            <div class="profile__card--user">{{currentUser.user.firstName}} {{currentUser.user.lastName}}</div>
+          </div>
+          <div class="profile__card__info">
+            {{formValues.message}}
+          </div>
+        </div>
+        {{/each}}
       </div>
     </div>
   </div>

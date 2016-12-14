@@ -23,14 +23,11 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    display: flex;
-    flex-direction: row;
   }
 
 &--flex {
   display: flex;
   flex-direction: column;
-
 }
 
 &__btn {
@@ -63,6 +60,8 @@ justify-content: flex-start;
 }
 
 .messages {
+  display: flex;
+  flex-direction: column;
 
   &__heading {
     margin: 0;
