@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'img',
   attributeBindings: ['src'],
-  src: 'http://placecage.com/c/400/400',
+  src: 'http://www.clker.com/cliparts/d/L/P/X/z/i/no-image-icon-md.png',
 
   didReceiveAttrs() {
     const reader = new FileReader();
