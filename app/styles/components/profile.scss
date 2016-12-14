@@ -1,15 +1,33 @@
 .profile {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: .1rem solid $c-darkgrey;
   margin-top: 2rem;
+
+  &__frame {
+    display: flex;
+    align-items: flex-start;
+    margin: auto 0;
+  }
+
+  &__image {
+    margin: 0;
+
+  }
+
+  &__left-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
 
 &--flex {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 &__btn {
@@ -30,7 +48,6 @@
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
-margin-left: 1rem;
 
   &-names {
     font-size: 1.5rem;
@@ -40,6 +57,53 @@ margin-left: 1rem;
     font-size: 1.2rem;
   }
 }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    margin: 0;
+    margin-bottom: 2rem;
+    border-bottom: .1rem solid $c-darkgrey;
+  }
+}
+
+.profile__card {
+  display: flex;
+  flex-basis: calc(100% / 3 - 2rem);
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem 0;
+  background: $c-white;
+  border: .2rem solid $c-accent;
+  border-radius: .4rem;
+  padding: 1rem;
+  box-shadow: $box-shadow;
+
+  &--user {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-left: .5rem;
+  }
+
+  &-image {
+    display: flex;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+  }
+
+  &__info {
+    font-weight: normal;
+    margin-top: 1rem;
+  }
+
+  &-flex {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 985px) {
