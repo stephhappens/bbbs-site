@@ -6,14 +6,14 @@ export default Ember.Controller.extend({
   flashMessages: Ember.inject.service(),
 
   actions: {
-    saveMessage(formValues) {
-      debugger;
+    saveMessage(formValues, reset) {
       const flashMessages = this.get('flashMessages');
       const messages = this.store.createRecord('message', formValues);
 
       messages.save()
             .then(() => {
               flashMessages.success('Successfully Posted!');
+              reset();
             })
             .catch(() => {
               flashMessages.danger('Something went wrong!');

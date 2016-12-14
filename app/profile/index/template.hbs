@@ -20,7 +20,7 @@
 
         <h1 class="calendar__heading">Upcoming Events</h1>
         <div class="calendar">
-          {{#each model as |value|}}
+          {{!-- {{#each model as |value|}}
             <div class="calendar__group">
               <div class="calendar__sidebar">
                 <p class="calendar__sidebar-date">{{moment-format value.date "MMM D"}}</p>
@@ -37,7 +37,7 @@
                 </div>
               </div>
             </div>
-          {{/each}}
+          {{/each}} --}}
         </div>
       </div>
     </div>
@@ -53,15 +53,15 @@
         {{/simple-form}}
 
       <div class="profile__flex">
-        {{#each model as |formValues|}}
+        {{#each model as |message|}}
 
         <div class="profile__card">
           <div class="profile__card-flex">
             <img src="http://vignette1.wikia.nocookie.net/harrypotter/images/3/3c/Harry_Potter_movies_hbp_promostills_6.jpg/revision/latest?cb=20141122215646" class="profile__card-image" alt="">
-            <div class="profile__card--user">{{currentUser.user.firstName}} {{currentUser.user.lastName}}</div>
+            <div class="profile__card--user">{{message.user.firstName}} {{message.user.lastName}}</div>
           </div>
           <div class="profile__card__info">
-            {{formValues.message}}
+            {{message.message}}
           </div>
         </div>
         {{/each}}
