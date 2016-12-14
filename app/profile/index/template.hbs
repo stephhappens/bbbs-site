@@ -2,7 +2,7 @@
   <div class="profile">
 
 
-    <div class="profile__left-side">
+    <div class="profile__side">
       <div class="profile--flex">
         {{!-- <h2 class="profile__heading">Welcome {{currentUser.user.firstName}}!</h2> --}}
         <div class="profile--row">
@@ -15,7 +15,7 @@
             <div class="profile__content-input">{{currentUser.user.employer}} </div>
             <div class="profile__content-input">{{currentUser.user.email}} </div>
             <div class="profile__content-input"> Little's Name: {{currentUser.user.little}} </div>
-            {{#link-to "profile.edit" class="profile__btn" }} Edit Profile {{/link-to}}
+            {{#link-to "profile.edit" class="profile__btn profile__btn--full" }} Edit Profile {{/link-to}}
         </div>
       </div>
 
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="profile__right-side">
+    <div class="profile__side">
       <h2 class="messages__heading">Messages</h2>
       {{#simple-form class="form form--messages" onsubmit=(action "saveMessage") as |formValues|}}
         <div class="messages">
