@@ -5,6 +5,25 @@
   border-radius: 0.4rem;
   box-shadow: $box-shadow;
 
+  &--messages {
+    margin: 0;
+    margin-bottom: 1rem;
+    border: 0;
+    box-shadow: none;
+  }
+
+  &__textarea {
+    border-top-right-radius: 0.4rem;
+    border-top-left-radius: 0.4rem;
+  }
+
+  &__boxshadow {
+    display: flex;
+    flex-direction: column;
+    box-shadow: $box-shadow;
+    border-radius: 0.4rem;
+  }
+
   &--user {
     display: flex;
     flex-direction: column;
@@ -77,6 +96,10 @@
   &__label {
     font-size: 0.8rem;
 
+    &--message {
+      background: $c-background;
+    }
+
     &--time {
     margin: 0 0.5rem;
 
@@ -113,6 +136,11 @@
     outline: 0;
     cursor: pointer;
 
+    &--submit {
+      border-bottom-right-radius: 0.4rem;
+      border-bottom-left-radius: 0.4rem;
+    }
+
     &--accent {
       background: $c-accent;
       border-bottom-right-radius: 0.4rem;
@@ -133,8 +161,6 @@
       border-bottom-left-radius: 0.4rem;
       text-align: center;
       text-decoration: none;
-
-
     }
 
     &--upload {

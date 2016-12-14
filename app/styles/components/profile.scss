@@ -1,6 +1,16 @@
 .profile {
   display: flex;
-  margin-top: 2rem;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+
+@media (max-width: 720px) {
+  flex-wrap: wrap;
+}
+
+  &__heading {
+    margin-top: 0;
+    color: $c-darkgrey;
+  }
 
   &__frame {
     display: flex;
@@ -10,7 +20,6 @@
 
   &__image {
     margin: 0;
-    margin-bottom: 1rem;
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
@@ -20,12 +29,27 @@
     display: flex;
     flex-direction: column;
     width: 50%;
+    margin-right: 1rem;
+
+    @media (max-width: 720px) {
+      width: 100%;
+    }
   }
 
   &__right-side {
     display: flex;
     flex-direction: column;
     width: 50%;
+
+    @media (max-width: 720px) {
+      width: 100%;
+    }
+  }
+
+  &--row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
 &--flex {
@@ -51,6 +75,7 @@
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+margin-left: 1rem;
 
   &-names {
     font-size: 1.5rem;
@@ -68,8 +93,9 @@ justify-content: flex-start;
 
   &__heading {
     margin: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     border-bottom: .1rem solid $c-darkgrey;
+    color: $c-darkgrey;
   }
 }
 
@@ -87,14 +113,14 @@ justify-content: flex-start;
 
   &--user {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-left: .5rem;
   }
 
   &-image {
     display: flex;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
   }
 
@@ -110,7 +136,7 @@ justify-content: flex-start;
 }
 
 @media (max-width: 985px) {
-  .heading {
+  .profile__heading {
     margin-left: 1rem;
   }
 }
