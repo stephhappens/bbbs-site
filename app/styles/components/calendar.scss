@@ -97,6 +97,10 @@
       color: #000;
       border-bottom: 0.3rem solid $c-primary;
       font-size: 0.8rem;
+
+      @media (max-width: 320px) {
+        text-align: center;
+      }
     }
 
     &--zero {
