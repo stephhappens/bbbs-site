@@ -43,7 +43,7 @@
   }
 
   &__sidebar-date {
-    max-width: 4rem;
+    max-width: 4.5rem;
     margin-top: 0;
     padding: 1rem;
     background: $c-white;
@@ -87,10 +87,17 @@
 
   &__available {
     padding: 0.3rem 0.5rem;
-    background: $c-primary;
+    // background: $c-primary;
     color: $c-white;
     font-size: 0.8rem;
     border-radius: 0.4rem;
+
+    &--number {
+      border-radius: 0;
+      color: #000;
+      border-bottom: 0.3rem solid $c-primary;
+      font-size: 0.8rem;
+    }
 
     &--zero {
       background: $c-danger;
