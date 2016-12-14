@@ -21,9 +21,18 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 420px) {
+      flex-wrap: wrap;
+    }
+
     &--info {
       flex-direction: column;
       margin-left: 3rem;
+
+      @media (max-width: 420px) {
+        margin-left: 0;
+        text-align: center;
+      }
     }
   }
 
