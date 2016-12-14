@@ -40,12 +40,16 @@
   z-index: 2;
 
   &__logo {
-    height: 4rem;
+    // flex-shrink: 0;
+    width: 8rem;
+    height: 3rem;
+    padding: 0.2rem 0;
   }
 
   &__group {
     display: flex;
     justify-content: space-between;
+    flex-shrink: 0;
   }
 
   &__item {

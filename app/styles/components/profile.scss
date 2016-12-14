@@ -1,6 +1,27 @@
 .profile {
   display: flex;
-  margin-top: 2rem;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+  @media (max-width: 720px) {
+    flex-wrap: wrap;
+  }
+
+  &__side {
+    flex-basis: calc(100% / s2);
+    margin-right: 1rem;
+    @media (max-width: 720px) {
+      width: 100%;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__heading {
+    margin-top: 0;
+    color: $c-darkgrey;
+  }
 
   &__frame {
     display: flex;
@@ -10,53 +31,62 @@
 
   &__image {
     margin: 0;
-
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
   }
 
-  &__left-side {
+  &--row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @media (max-width: 720px) {
+      flex-direction: column;
+    }
+  }
+
+  &--flex {
     display: flex;
     flex-direction: column;
-    width: 50%;
   }
 
-  &__right-side {
+  &__btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+    padding: 0.3rem 0.5rem;
+    border: 0;
+    background: $c-primary;
+    color: $c-white;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+
+    &--full {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    @media (max-width: 720px) {
+      margin-top: 1rem;
+    }
+
+    &-names {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &-input {
+      font-size: 1.2rem;
+    }
   }
-
-&--flex {
-  display: flex;
-  flex-direction: column;
-}
-
-&__btn {
-  margin-top: 1rem;
-  align-self: flex-start;
-  padding: 0.3rem 0.5rem;
-  border: 0;
-  background: $c-primary;
-  color: $c-white;
-  font-size: 1rem;
-  border-radius: 0.4rem;
-  outline: 0;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-&__content {
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-
-  &-names {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  &-input {
-    font-size: 1.2rem;
-  }
-}
 }
 
 .messages {
@@ -64,9 +94,9 @@ justify-content: flex-start;
   flex-direction: column;
 
   &__heading {
-    margin: 0;
-    margin-bottom: 2rem;
-    border-bottom: .1rem solid $c-darkgrey;
+    margin: 0 0 1rem;
+    border-bottom: 0.1rem solid $c-darkgrey;
+    color: $c-darkgrey;
   }
 }
 
@@ -77,21 +107,21 @@ justify-content: flex-start;
   flex-grow: 1;
   margin: 1rem 0;
   background: $c-white;
-  border: .2rem solid $c-accent;
-  border-radius: .4rem;
+  border: 0.2rem solid $c-accent;
+  border-radius: 0.4rem;
   padding: 1rem;
   box-shadow: $box-shadow;
 
   &--user {
     font-weight: bold;
-    font-size: 1.5rem;
-    margin-left: .5rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
   }
 
   &-image {
     display: flex;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
   }
 
@@ -105,9 +135,8 @@ justify-content: flex-start;
     align-items: center;
   }
 }
-
 @media (max-width: 985px) {
-  .heading {
+  .profile__heading {
     margin-left: 1rem;
   }
 }
