@@ -15,7 +15,7 @@
             {{#if (lte event.remainingTickets 0)}}
               <div class="calendar__available calendar__available--zero">No Tickets Remaining</div>
             {{else}}
-              <div class="calendar__available">Available Tickets: {{ event.remainingTickets }}</div>
+              <div class="calendar__available--number">Available Tickets: {{ event.remainingTickets }}</div>
               {{#link-to "calendar.detail" event class="calendar__claim" }}Claim Ticket{{/link-to}}
             {{/if}}
 

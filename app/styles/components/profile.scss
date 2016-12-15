@@ -34,6 +34,7 @@
     height: 12rem;
     width: 12rem;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   &--row {
@@ -74,8 +75,11 @@
     flex-direction: column;
     justify-content: flex-start;
     margin-left: 1rem;
+
     @media (max-width: 720px) {
       margin-top: 1rem;
+      margin-left: 0;
+      text-align: center;
     }
 
     &-names {
@@ -123,6 +127,7 @@
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   &__info {

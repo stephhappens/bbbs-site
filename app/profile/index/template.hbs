@@ -29,7 +29,7 @@
               </div>
               <div class="calendar__main">
                 <p class="calendar__event">{{ value.event.name }}</p>
-                <p class="calendar__date">{{moment-format value.event.date "dddd, MMMM Do"}}</p>
+                <p class="calendar__date">{{moment-format value.event.date "dddd, MMMM Do, YYYY"}}</p>
                 <p class="calendar__location">{{ value.event.location }}</p>
                 <p class="calendar__time">{{moment-format value.event.startTime "hh:mm A" "HH:mm"}} - {{moment-format value.event.endTime "hh:mm A" "HH:mm"}}</p>
                 <p class="calendar__description">{{ value.event.message }}</p>

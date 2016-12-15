@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
       // Login user
       this.get('session').authenticate(authenticator, secretStuff)
         .then(() => this.get('currentUser').loadCurrentUser()).then(() => {
-          this.transitionToRoute('calendar');
+          this.transitionToRoute('profile');
         });
       // Redirect
     }
