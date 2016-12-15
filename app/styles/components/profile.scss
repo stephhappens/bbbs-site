@@ -7,7 +7,7 @@
   }
 
   &__side {
-    flex-basis: calc(100% / s2);
+    flex-basis: calc(100% / 2);
     margin-right: 1rem;
     @media (max-width: 720px) {
       width: 100%;
