@@ -24,16 +24,30 @@
   }
 
   &__frame {
+    position: relative;
+    min-width: 8rem;
     display: flex;
     align-items: flex-start;
     margin: auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%
+    }
   }
 
   &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: 0;
-    height: 12rem;
-    width: 12rem;
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
+    overflow: hidden;
     object-fit: cover;
   }
 
