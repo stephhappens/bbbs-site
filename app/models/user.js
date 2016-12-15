@@ -1,6 +1,8 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 
+import config from 'bbbs-site/config/environment';
+
 export default DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
@@ -17,6 +19,6 @@ export default DS.Model.extend({
   profilePicUrl: DS.attr('string'),
 
   fullProfilePicUrl: Ember.computed('profilePicUrl', function () {
-    return `http://localhost:3333/uploads/${this.get('profilePicUrl')}`;
+    return `${config.DS.host}/uploads/${this.get('profilePicUrl')}`;
   }),
 });
