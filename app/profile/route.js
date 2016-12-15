@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
   currentUser: Ember.inject.service(),
 
   model() {
@@ -12,7 +13,6 @@ export default Ember.Route.extend({
       latest: true,
     })
     .then((latestAnnouncement) => {
-      console.log(latestAnnouncement.get('message'));
       this.get('flashMessages').success(latestAnnouncement.get('message'), {
         timeout: 60 * 1000,
         sticky: true,
