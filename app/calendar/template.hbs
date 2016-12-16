@@ -4,13 +4,14 @@
     {{#each (sort-by "date" model) as |event|}}
       <div class="calendar__group">
         <div class="calendar__sidebar">
-          <p class="calendar__sidebar-date">{{moment-format event.date "MMM D"}}</p>
+          <p class="calendar__sidebar-date">{{moment-format event.date "MMM D" timeZone="GMT"}}</p>
         </div>
         <div class="calendar__main">
           <p class="calendar__event">{{ event.name }}</p>
-          <p class="calendar__date">{{moment-format event.date "dddd, MMMM Do, YYYY"}}</p>
+          <p class="calendar__date">{{moment-format event.date "dddd, MMMM Do, YYYY" timeZone="GMT"}}</p>
           <p class="calendar__location">{{ event.location }}</p>
-          <p class="calendar__time">{{moment-format event.startTime "hh:mm A" "HH:mm"}} - {{moment-format event.endTime "hh:mm A" "HH:mm"}}</p>          <p class="calendar__description">{{ event.message }}</p>
+          <p class="calendar__time">{{moment-format event.startTime "hh:mm A" timeZone="GMT"}} - {{moment-format event.endTime "hh:mm A"timeZone="GMT"}}</p>
+          <p class="calendar__description">{{ event.message }}</p>
           <div class="calendar__tickets">
             {{#if (lte event.remainingTickets 0)}}
               <div class="calendar__available calendar__available--zero">No Tickets Remaining</div>
