@@ -22,7 +22,7 @@
 
         <div class="calendar--profile">
           <h2 class="calendar__header--profile">Your Upcoming Events</h2>
-          {{#each (sort-by "date" currentUser.user.tickets) as |value|}}
+          {{#each currentUser.user.tickets as |value|}}
             <div class="calendar__group">
               <div class="calendar__sidebar">
                 <p class="calendar__sidebar-date">{{moment-format value.event.date "MMM D" timeZone="GMT"}}</p>
