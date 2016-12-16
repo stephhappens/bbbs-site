@@ -2,6 +2,9 @@
 
 module.exports = function (environment) {
   const ENV = {
+    moment: {
+      includeTimezone: '2010-2020'
+    },
     DS: {
       host: 'http://localhost:3333',
       namespace: 'api',
