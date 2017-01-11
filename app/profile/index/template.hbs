@@ -54,19 +54,20 @@
 
       <div class="profile--flex">
         {{#each (sort-by "createdAt:desc" model) as |message|}}
-
-          <div class="profile__card">
-            <div class="profile__card-flex">
-              <img src="{{message.user.fullProfilePicUrl}}" class="profile__card-image" alt="">
-              <div class="profile__card--user">
-                <p class="profile__card--info">{{message.user.firstName}} {{message.user.lastName}}</p>
-                <p class="profile__card--info">Posted on {{moment-format message.createdAt "MMM. Do, hh:mm A"}}</p>
+          {{#if message.message}}
+            <div class="profile__card">
+              <div class="profile__card-flex">
+                <img src="{{message.user.fullProfilePicUrl}}" class="profile__card-image" alt="">
+                <div class="profile__card--user">
+                  <p class="profile__card--info">{{message.user.firstName}} {{message.user.lastName}}</p>
+                  <p class="profile__card--info">Posted on {{moment-format message.createdAt "MMM. Do, hh:mm A"}}</p>
+                </div>
+              </div>
+              <div class="profile__card__info">
+                {{markdown-render message.message linkify=true}}
               </div>
             </div>
-            <div class="profile__card__info">
-              {{markdown-render message.message linkify=true}}
-            </div>
-          </div>
+          {{/if}}
         {{/each}}
       </div>
     </div>
